@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workspace Dashboard — Tab Manager</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <header class="dash-header">
+      <div class="dash-header-left">
+        <div class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          <h1>Workspace Dashboard</h1>
+        </div>
+        <p class="subtitle">Manage all your saved browser sessions</p>
+      </div>
+      <div class="stats-bar" id="statsBar">
+        <div class="stat-card">
+          <span class="stat-value" id="statWorkspaces">0</span>
+          <span class="stat-label">Workspaces</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value" id="statTabs">0</span>
+          <span class="stat-label">Tabs Saved</span>
+        </div>
+        <div class="stat-card highlight">
+          <span class="stat-value" id="statRam">0 MB</span>
+          <span class="stat-label">Est. RAM Saved</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="dash-main">
+      <div id="workspaceGrid" class="workspace-grid">
+        <div class="empty-state">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+          <p>No workspaces saved yet.</p>
+          <p class="empty-hint">Use the extension popup to save your first session.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

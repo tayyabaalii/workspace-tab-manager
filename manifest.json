@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Workspace Tab Manager",
+  "version": "1.0.0",
+  "description": "Save, organize, and restore browser sessions by project workspaces.",
+  "permissions": ["tabs", "storage", "windows"],
+  "background": {
+    "service_worker": "src/background/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "options_page": "src/dashboard/dashboard.html",
+  "commands": {
+    "save-workspace": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Save current session as workspace"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

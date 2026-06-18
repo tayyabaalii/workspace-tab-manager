@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workspace Tab Manager</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup">
+    <header class="header">
+      <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+        <span>Tab Manager</span>
+      </div>
+      <button id="manageBtn" class="btn-ghost" title="Open dashboard">Manage</button>
+    </header>
+
+    <section class="save-section">
+      <label for="workspaceName" class="label">Workspace name</label>
+      <input
+        type="text"
+        id="workspaceName"
+        placeholder="e.g. Client X Pitch"
+        maxlength="80"
+        autocomplete="off"
+      />
+      <button id="saveBtn" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+          <polyline points="17 21 17 13 7 13 7 21"/>
+          <polyline points="7 3 7 8 15 8"/>
+        </svg>
+        Save &amp; Close Current Session
+      </button>
+      <p class="hint">Saves all tabs in this window, then closes them.</p>
+    </section>
+
+    <section class="workspaces-section">
+      <h2 class="section-title">Recent Workspaces</h2>
+      <div id="workspaceList" class="workspace-list">
+        <div class="empty-state">No saved workspaces yet.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span id="tabCount" class="tab-count"></span>
+      <kbd>Ctrl+Shift+S</kbd> quick save
+    </footer>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
